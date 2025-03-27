@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neeraj Gyawali | Developer & Researcher</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+        }
+        .dark .hero-gradient {
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+        }
+        .project-card:hover .project-overlay {
+            opacity: 0.9;
+        }
+        .dark body {
+            background-color: #1a202c;
+            color: #cbd5e0;
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+    <!-- Navigation -->
+    <nav class="bg-white dark:bg-gray-800 shadow-lg fixed w-full z-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <span class="text-xl font-bold text-blue-800 dark:text-blue-400">Neeraj Gyawali</span>
+                <div class="flex items-center space-x-6">
+                    <button id="darkModeToggle" class="text-gray-600 dark:text-gray-300">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <a href="Profile.pdf" download class="bg-blue-800 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
+                        Download CV
+                    </a>
+                    <div class="hidden md:flex space-x-8">
+                        <a href="#about" class="text-gray-600 dark:text-gray-300 hover:text-blue-800">About</a>
+                        <a href="#experience" class="text-gray-600 dark:text-gray-300 hover:text-blue-800">Experience</a>
+                        <a href="#projects" class="text-gray-600 dark:text-gray-300 hover:text-blue-800">Projects</a>
+                        <a href="#blog" class="text-gray-600 dark:text-gray-300 hover:text-blue-800">Blog</a>
+                        <a href="#contact" class="text-gray-600 dark:text-gray-300 hover:text-blue-800">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+<section class="hero-gradient pt-24 pb-12 text-white relative overflow-hidden">
+    <!-- Video Container -->
+    <div class="video-container absolute inset-0 z-0">
+        <video class="video-background active opacity-100" muted playsinline>
+            <source src="waves.mp4" type="video/mp4">
+        </video>
+        <video class="video-background" muted playsinline>
+            <source src="data-flow.mp4" type="video/mp4">
+        </video>
+        <video class="video-background" muted playsinline>
+            <source src="circuit.mp4" type="video/mp4">
+        </video>
+    </div>
+    
+    <div class="max-w-6xl mx-auto px-4 md:flex items-center relative z-10">
+        <div class="md:w-1/2">
+            <h1 class="text-4xl font-bold mb-4">Innovating Through Data & Engineering</h1>
+            <p class="text-xl mb-6">Project Developer & Researcher specializing in sustainable tech solutions</p>
+            <a href="#contact" class="bg-white text-blue-800 px-6 py-3 rounded-lg font-semibold hover:bg-opacity-90">Let's Collaborate</a>
+        </div>
+        <div class="md:w-1/2 mt-8 md:mt-0">
+            <div class="relative rounded-full overflow-hidden w-3/4 mx-auto border-4 border-white shadow-xl">
+                <img src="neeraj.jpg" alt="Neeraj Gyawali" class="relative z-10 block w-full">
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-16 bg-white dark:bg-gray-800">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 dark:text-white">Technical Expertise</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Skill Cards -->
+                <div class="p-6 bg-gray-50 dark:bg-gray-700 rounded-lg">
+                    <i class="fas fa-lightbulb text-4xl text-blue-800 dark:text-blue-400 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-3 dark:text-white">R&D Management</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Project Lifecycle • Grant Management • Research</p>
+                </div>
+                <div class="p-6 bg-gray-50 dark:bg-gray-700 rounded-lg">
+                    <i class="fas fa-database text-4xl text-blue-800 dark:text-blue-400 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-3 dark:text-white">Data Science</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Python OOP • AI Methodology • Spark • Data Visualization</p>
+                </div>
+                <div class="p-6 bg-gray-50 dark:bg-gray-700 rounded-lg">
+                    <i class="fas fa-cogs text-4xl text-blue-800 dark:text-blue-400 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-3 dark:text-white">Back-end Development</h3>
+                    <p class="text-gray-600 dark:text-gray-300">System Architecture • API Design • Database Management</p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+ 
+
+    <!-- Projects Section with Case Studies -->
+    <section id="projects" class="py-16 bg-white dark:bg-gray-800">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 dark:text-white">Featured Projects</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Fog Harvester Project -->
+                <div class="project-card relative rounded-lg overflow-hidden">
+                    <img src="fog-harvester.jpg" alt="Fog Harvester" class="w-full h-64 object-cover">
+                    <div class="project-overlay absolute inset-0 bg-blue-800 opacity-0 transition-opacity p-6 text-white">
+                        <h3 class="text-xl font-bold mb-2">Fog Harvester System</h3>
+                        <div class="case-study-content hidden">
+                            <h4 class="font-bold mb-2">Project Overview</h4>
+                            <p>Developed sustainable water solution for rural communities...</p>
+                            <h4 class="font-bold mt-4 mb-2">Technologies Used</h4>
+                            <ul class="list-disc pl-6">
+                                <li>Harvester with basic working</li>
+                                <li>Data Analysis with Python</li>
+                                <li>AWG using Solar</li>
+                            </ul>
+                        </div>
+                        <button onclick="toggleCaseStudy(this)" class="mt-4 inline-block border border-white px-4 py-2 rounded hover:bg-white hover:text-blue-800">
+                            Read Case Study →
+                        </button>
+                    </div>
+                </div>
+                <!-- Add other project cards -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="py-16 bg-gray-50 dark:bg-gray-900">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 dark:text-white">Technical Writings</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow">
+                    <h3 class="text-xl font-bold dark:text-white">Sustainable Tech in Developing Countries</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mt-2">Exploring low-cost engineering solutions...</p>
+                    <a href="#" class="text-blue-800 dark:text-blue-400 mt-4 inline-block">Read More →</a>
+                </div>
+                <!-- Add more blog posts -->
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+<section id="contact" class="py-16 bg-white dark:bg-gray-800">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-8 dark:text-white">Let's Connect</h2>
+            <div class="flex justify-center space-x-6 mb-8">
+                <a href="https://github.com/neeraj5508" target="_blank" class="text-blue-800 dark:text-blue-400 hover:text-blue-600">
+                    <i class="fab fa-github text-3xl"></i>
+                </a>
+                <a href="mailto:neerajgyawali5508@gmail.com" class="text-blue-800 dark:text-blue-400 hover:text-blue-600">
+                    <i class="fas fa-envelope text-3xl"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/neeraj-gyawali-04833a25b/" target="_blank" class="text-blue-800 dark:text-blue-400 hover:text-blue-600">
+                    <i class="fab fa-linkedin text-3xl"></i>
+                </a>
+            </div>
+
+        <!-- Contact Form -->
+        <div class="max-w-xl mx-auto">
+            <form id="contactForm" class="space-y-6 text-left">
+                <div>
+                    <label for="name" class="block text-gray-700 dark:text-gray-300 mb-2">Full Name</label>
+                    <input type="text" id="name" name="name" required 
+                           class="w-full px-4 py-2 border rounded-lg dark:bg-gray-700 dark:border-gray-600
+                                  focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                           minlength="3">
+                    <div class="error-message text-red-500 text-sm mt-1 hidden" data-error="name">
+                        Please enter at least 3 characters
+                    </div>
+                </div>
+
+                <div>
+                    <label for="email" class="block text-gray-700 dark:text-gray-300 mb-2">Email</label>
+                    <input type="email" id="email" name="email" required
+                           class="w-full px-4 py-2 border rounded-lg dark:bg-gray-700 dark:border-gray-600
+                                  focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                           pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                    <div class="error-message text-red-500 text-sm mt-1 hidden" data-error="email">
+                        Please enter a valid email address
+                    </div>
+                </div>
+
+                <div>
+                    <label for="subject" class="block text-gray-700 dark:text-gray-300 mb-2">Subject</label>
+                    <input type="text" id="subject" name="subject" required
+                           class="w-full px-4 py-2 border rounded-lg dark:bg-gray-700 dark:border-gray-600
+                                  focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                           minlength="5">
+                    <div class="error-message text-red-500 text-sm mt-1 hidden" data-error="subject">
+                        Subject must be at least 5 characters
+                    </div>
+                </div>
+
+                <div>
+                    <label for="message" class="block text-gray-700 dark:text-gray-300 mb-2">Message</label>
+                    <textarea id="message" name="message" rows="4" required
+                              class="w-full px-4 py-2 border rounded-lg dark:bg-gray-700 dark:border-gray-600
+                                     focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                              minlength="10"></textarea>
+                    <div class="error-message text-red-500 text-sm mt-1 hidden" data-error="message">
+                        Message must be at least 10 characters
+                    </div>
+                </div>
+
+                <button type="submit" 
+                        class="w-full bg-blue-800 text-white px-6 py-3 rounded-lg font-semibold
+                               hover:bg-blue-700 transition-colors dark:bg-blue-600 dark:hover:bg-blue-500">
+                    Send Message
+                </button>
+            </form>
+            
+            <!-- Success Message -->
+            <div id="successMessage" class="mt-4 p-4 bg-green-100 text-green-700 rounded-lg hidden
+                                       dark:bg-green-800 dark:text-green-200">
+                Message sent successfully! I'll respond within 24 hours.
+            </div>
+        </div>
+
+        <p class="text-gray-600 dark:text-gray-300 mt-8">Based in Lalitpur, Nepal | Open for collaborations</p>
+    </div>
+</section>
+
+<script>
+    // Form Validation
+    const form = document.getElementById('contactForm');
+    const errorMessages = document.querySelectorAll('.error-message');
+    const successMessage = document.getElementById('successMessage');
+
+    const showError = (field, messageElement) => {
+        field.classList.add('border-red-500');
+        messageElement.classList.remove('hidden');
+    };
+
+    const hideError = (field, messageElement) => {
+        field.classList.remove('border-red-500');
+        messageElement.classList.add('hidden');
+    };
+
+    const validateField = (field) => {
+        const errorElement = document.querySelector(`[data-error="${field.id}"]`);
+        
+        if (field.validity.valid) {
+            hideError(field, errorElement);
+            return true;
+        }
+
+        showError(field, errorElement);
+        return false;
+    };
+
+    // Real-time Validation
+    document.querySelectorAll('input, textarea').forEach(field => {
+        field.addEventListener('input', () => {
+            validateField(field);
+        });
+    });
+
+    // Form Submission
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        let formIsValid = true;
+        
+        // Validate all fields
+        document.querySelectorAll('input, textarea').forEach(field => {
+            if (!validateField(field)) formIsValid = false;
+        });
+
+        if (formIsValid) {
+            // Here you would typically send the form data to a server
+            successMessage.classList.remove('hidden');
+            form.reset();
+            
+            // Hide success message after 5 seconds
+            setTimeout(() => {
+                successMessage.classList.add('hidden');
+            }, 5000);
+        }
+    });
+</script>
+
+    <script>
+        // Dark Mode Toggle
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const body = document.body;
+
+        darkModeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark');
+            const icon = darkModeToggle.querySelector('i');
+            icon.classList.toggle('fa-moon');
+            icon.classList.toggle('fa-sun');
+        });
+
+        // Case Study Toggle
+        function toggleCaseStudy(button) {
+            const caseStudy = button.previousElementSibling;
+            caseStudy.classList.toggle('hidden');
+            button.textContent = caseStudy.classList.contains('hidden') ? 'Read Case Study →' : 'Close Study';
+        }
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+    
+    <style>
+    .video-container {
+        transition: opacity 1.5s ease-in-out;
+    }
+
+    .video-background {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        min-width: 100%;
+        min-height: 100%;
+        object-fit: cover;
+        opacity: 0;
+        transition: opacity 1.5s ease-in-out;
+        z-index: 0;
+    }
+
+    .video-background.active {
+        opacity: 0.2;
+    }
+
+    @media (max-width: 768px) {
+        .video-background {
+            display: none;
+        }
+    }
+</style>
+
+<script>
+    // Video Sequence Controller
+    const videos = document.querySelectorAll('.video-background');
+    let currentVideo = 0;
+    
+    function setupVideoSequencer() {
+        // Only run on desktop
+        if(window.innerWidth < 768) return;
+
+        // Initialize first video
+        videos[currentVideo].play();
+        videos[currentVideo].classList.add('active');
+
+        // Add event listeners for video end
+        videos.forEach((video, index) => {
+            video.addEventListener('ended', () => {
+                video.classList.remove('active');
+                currentVideo = (index + 1) % videos.length;
+                videos[currentVideo].classList.add('active');
+                videos[currentVideo].play();
+            });
+            
+            // Mobile fallback: Ensure videos don't load on mobile
+            if(window.innerWidth < 768) {
+                video.pause();
+                video.removeAttribute('src');
+            }
+        });
+    }
+
+    // Start sequence when page loads
+    window.addEventListener('load', setupVideoSequencer);
+
+    // Handle window resize
+    window.addEventListener('resize', () => {
+        if(window.innerWidth >= 768) {
+            setupVideoSequencer();
+        } else {
+            videos.forEach(video => {
+                video.pause();
+                video.classList.remove('active');
+            });
+        }
+    });
+</script>
+</body>
+</html>
