@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neeraj Gyawali | Researcher & Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --dark-bg: #0f172a;
+            --dark-card: #1e293b;
+            --dark-text: #e2e8f0;
+            --dark-primary: #60a5fa;
+            --dark-accent: #3b82f6;
+            
+            --light-bg: #f8fafc;
+            --light-card: #ffffff;
+            --light-text: #0f172a;
+            --light-primary: #2563eb;
+            --light-accent: #3b82f6;
+            
+            --transition: all 0.4s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: var(--transition);
+        }
+        
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--dark-text);
+            line-height: 1.6;
+            transition: background-color 0.5s;
+        }
+        
+        .light-mode {
+            background-color: var(--light-bg);
+            color: var(--light-text);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .light-mode header {
+            background: linear-gradient(135deg, #3b82f6 0%, #1e3a8a 100%);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .light-mode .logo {
+            color: var(--light-text);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+        
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.85);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: white;
+        }
+        
+        .light-mode .nav-links a {
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        /* Dark Mode Toggle */
+        .theme-toggle {
+            position: relative;
+            width: 60px;
+            height: 30px;
+            background: #334155;
+            border-radius: 15px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            padding: 0 5px;
+            box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.4);
+        }
+        
+        .light-mode .theme-toggle {
+            background: #dbeafe;
+        }
+        
+        .toggle-handle {
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            background: #f8fafc;
+            border-radius: 50%;
+            transition: transform 0.4s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .light-mode .toggle-handle {
+            transform: translateX(30px);
+            background: #f8fafc;
+        }
+        
+        .toggle-icon {
+            font-size: 12px;
+            color: #0f172a;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .light-mode .hero {
+            background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+        }
+        
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+        }
+        
+        .hero-text {
+            flex: 1;
+            max-width: 600px;
+        }
+        
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .profile-pic {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            border: 5px solid var(--dark-primary);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(45deg, #3b82f6, #60a5fa);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .profile-pic img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .light-mode .profile-pic {
+            border: 5px solid var(--light-primary);
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .light-mode .hero h1 {
+            color: var(--light-text);
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            color: #e2e8f0;
+        }
+        
+        .light-mode .hero p {
+            color: var(--light-text);
+        }
+        
+        .hero-btns {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary {
+            background: var(--dark-primary);
+            color: white;
+            box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);
+        }
+        
+        .btn-primary:hover {
+            background: #3B82F6;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(59, 130, 246, 0.4);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--dark-primary);
+            color: var(--dark-primary);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(96, 165, 250, 0.1);
+            transform: translateY(-3px);
+        }
+        
+        .btn-download {
+            background: #10b981;
+            color: white;
+            box-shadow: 0 4px 10px rgba(16, 185, 129, 0.3);
+        }
+        
+        .btn-download:hover {
+            background: #059669;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(5, 150, 105, 0.4);
+        }
+        
+        /* Sections */
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            color: var(--dark-primary);
+            position: relative;
+        }
+        
+        .light-mode .section-title {
+            color: var(--light-primary);
+        }
+        
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--dark-primary);
+            margin: 15px auto;
+            border-radius: 2px;
+        }
+        
+        .light-mode .section-title::after {
+            background: var(--light-primary);
+        }
+        
+        /* Experience Section */
+        .experience-item {
+            background: var(--dark-card);
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+            border-left: 4px solid var(--dark-primary);
+        }
+        
+        .light-mode .experience-item {
+            background: var(--light-card);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid var(--light-primary);
+        }
+        
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .experience-company {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark-primary);
+        }
+        
+        .light-mode .experience-company {
+            color: var(--light-primary);
+        }
+        
+        .experience-duration {
+            background: rgba(96, 165, 250, 0.1);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+        
+        .light-mode .experience-duration {
+            background: rgba(37, 99, 235, 0.05);
+        }
+        
+        .experience-role {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: #94a3b8;
+        }
+        
+        .light-mode .experience-role {
+            color: #64748b;
+        }
+        
+        .experience-details {
+            padding-left: 20px;
+        }
+        
+        .experience-details li {
+            margin-bottom: 10px;
+            position: relative;
+        }
+        
+        .experience-details li::before {
+            content: "▹";
+            position: absolute;
+            left: -20px;
+            color: var(--dark-primary);
+        }
+        
+        .light-mode .experience-details li::before {
+            color: var(--light-primary);
+        }
+        
+        /* Skills Section */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .skill-category {
+            background: var(--dark-card);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .light-mode .skill-category {
+            background: var(--light-card);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .skill-category h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--dark-primary);
+            text-align: center;
+        }
+        
+        .light-mode .skill-category h3 {
+            color: var(--light-primary);
+        }
+        
+        .skill-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+        
+        .skill-badge {
+            background: var(--dark-primary);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        .light-mode .skill-badge {
+            background: var(--light-primary);
+        }
+        
+        /* Cards */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .card {
+            background: var(--dark-card);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            height: 300px;
+            position: relative;
+        }
+        
+        .light-mode .card {
+            background: var(--light-card);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .card-content {
+            padding: 25px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--dark-primary);
+        }
+        
+        .light-mode .card h3 {
+            color: var(--light-primary);
+        }
+        
+        .card p {
+            margin-bottom: 15px;
+            color: #94a3b8;
+        }
+        
+        .light-mode .card p {
+            color: #64748b;
+        }
+        
+        .card .date {
+            font-size: 0.9rem;
+            color: var(--dark-primary);
+            font-weight: 600;
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .light-mode .card .date {
+            color: var(--light-primary);
+        }
+        
+        /* Project Details Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            overflow-y: auto;
+            padding: 20px;
+        }
+        
+        .modal-content {
+            background: var(--dark-card);
+            max-width: 900px;
+            margin: 50px auto;
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+        }
+        
+        .light-mode .modal-content {
+            background: var(--light-card);
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1.8rem;
+            color: white;
+            background: rgba(0, 0, 0, 0.5);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.3s ease;
+        }
+        
+        .close-modal:hover {
+            background: rgba(0, 0, 0, 0.8);
+            transform: rotate(90deg);
+        }
+        
+        .modal-header {
+            position: relative;
+            height: 300px;
+            overflow: hidden;
+        }
+        
+        .modal-header img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .modal-header-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 30px;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            color: white;
+        }
+        
+        .modal-header h2 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .modal-body {
+            padding: 30px;
+        }
+        
+        .project-details {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+        
+        .project-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--dark-primary);
+        }
+        
+        .light-mode .project-info h3 {
+            color: var(--light-primary);
+        }
+        
+        .project-info p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        
+        .project-meta {
+            background: rgba(96, 165, 250, 0.1);
+            border-radius: 8px;
+            padding: 20px;
+        }
+        
+        .light-mode .project-meta {
+            background: rgba(37, 99, 235, 0.05);
+        }
+        
+        .meta-item {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .light-mode .meta-item {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        .meta-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border: none;
+        }
+        
+        .meta-item h4 {
+            font-size: 1rem;
+            margin-bottom: 5px;
+            color: var(--dark-primary);
+        }
+        
+        .light-mode .meta-item h4 {
+            color: var(--light-primary);
+        }
+        
+        .tech-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        
+        .tech-badge {
+            background: var(--dark-primary);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+        
+        .light-mode .tech-badge {
+            background: var(--light-primary);
+        }
+        
+        .project-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: var(--dark-primary);
+            color: white;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .light-mode .project-link {
+            background: var(--light-primary);
+        }
+        
+        .project-link:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+        
+        /* Footer */
+        footer {
+            background: #0f172a;
+            color: #94a3b8;
+            padding: 50px 0 30px;
+            text-align: center;
+        }
+        
+        .light-mode footer {
+            background: #1e40af;
+            color: #dbeafe;
+        }
+        
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin: 30px 0;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: rgba(148, 163, 184, 0.1);
+            border-radius: 50%;
+            color: #e2e8f0;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background: var(--dark-primary);
+            transform: translateY(-5px);
+        }
+        
+        .light-mode .social-links a {
+            background: rgba(219, 234, 254, 0.2);
+            color: #e2e8f0;
+        }
+        
+        .copyright {
+            margin-top: 30px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .hero-btns {
+                justify-content: center;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero p {
+                font-size: 1.3rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .project-details {
+                grid-template-columns: 1fr;
+            }
+            
+            .modal-header {
+                height: 200px;
+            }
+            
+            .profile-pic {
+                width: 250px;
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body class="dark-mode">
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">Neeraj</a>
+                <div class="nav-links">
+                    <a href="#about">About</a>
+                    <a href="#experience">Experience</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="theme-toggle" id="themeToggle">
+                    <div class="toggle-handle">
+                        <i class="fas fa-moon toggle-icon"></i>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Neeraj Gyawali</h1>
+                    <p>Researcher | Innovator | Data Enthusiast</p>
+                    <p class="location">Lalitpur District, Nepal</p>
+                    <div class="hero-btns">
+                        <a href="#contact" class="btn btn-primary">
+                            <i class="fas fa-envelope"></i> Get in Touch
+                        </a>
+                        <a href="#projects" class="btn btn-secondary">
+                            <i class="fas fa-code"></i> View Projects
+                        </a>
+                        <a href="Neeraj Gyawali.pdf" download class="btn btn-download">
+                            <i class="fas fa-download"></i> Download Resume
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="profile-pic">
+                        <img src="neeraj.jpg" alt="Neeraj Gyawali">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="card">
+                <div class="card-content">
+                    <p>Hello! I'm Neeraj, a passionate Researcher and Developer with expertise in back-end development, data analysis, and research and development. I specialize in creating innovative solutions that bridge technology and real-world applications.</p>
+                    <p>With experience in grant management, sales/business development, and computer vision, I focus on developing sustainable and impactful technologies that address real challenges. My work spans from fog harvesting research to bridge infrastructure development across rural Nepal.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title">Professional Experience</h2>
+            
+            <div class="experience-item">
+                <div class="experience-header">
+                    <h3 class="experience-company">Pana Academy</h3>
+                    <span class="experience-duration">May 2025 - Present</span>
+                </div>
+                <p class="experience-role">Project Lead</p>
+                <ul class="experience-details">
+                    <li>Tutoring and guiding students for careers in the IT industry</li>
+                    <li>Teaching Data Science and related subjects part-time</li>
+                    <li>Developing curriculum and learning materials for tech education</li>
+                </ul>
+            </div>
+            
+            <div class="experience-item">
+                <div class="experience-header">
+                    <h3 class="experience-company">Junkiri Industries Pvt. Ltd.</h3>
+                    <span class="experience-duration">February 2016 - Present</span>
+                </div>
+                <p class="experience-role">Project Development Manager</p>
+                <ul class="experience-details">
+                    <li>Assisted in manufacturing over 200 trail, suspended and suspension bridges across rural Nepal</li>
+                    <li>Gained marketing and public relations experience during project execution</li>
+                    <li>Managed project timelines, resources, and stakeholder communications</li>
+                </ul>
+            </div>
+            
+            <div class="experience-item">
+                <div class="experience-header">
+                    <h3 class="experience-company">Nepal Academy of Science and Technology (NAST)</h3>
+                    <span class="experience-duration">April 2024 - May 2025</span>
+                </div>
+                <p class="experience-role">Research and Development Project Manager</p>
+                <ul class="experience-details">
+                    <li>Researched and developed fog harvesting technologies for rural Nepal</li>
+                    <li>Collected vital data for the project and created detailed reports with insights</li>
+                    <li>Visited and assessed rural sites appropriate for fog harvesting projects</li>
+                    <li>Collaborated with locals and local-level governments to raise awareness of alternative water sources</li>
+                </ul>
+            </div>
+            
+            <div class="experience-item">
+                <div class="experience-header">
+                    <h3 class="experience-company">Inspiring Lab</h3>
+                    <span class="experience-duration">March 2023 - March 2024</span>
+                </div>
+                <p class="experience-role">Back End Developer</p>
+                <ul class="experience-details">
+                    <li>Developed and maintained back-end systems for various applications</li>
+                    <li>Implemented RESTful APIs and database solutions</li>
+                    <li>Collaborated with front-end developers to integrate user-facing elements</li>
+                </ul>
+            </div>
+            
+            <div class="experience-item">
+                <div class="experience-header">
+                    <h3 class="experience-company">Freelance (Self Employed)</h3>
+                    <span class="experience-duration">March 2021 - February 2023</span>
+                </div>
+                <p class="experience-role">Freelance Developer</p>
+                <ul class="experience-details">
+                    <li>Created Point of Sale system with inventory management for local vendors</li>
+                    <li>Developed data visualization system for a fabrication industry</li>
+                    <li>Created websites including a bookshop using WordPress</li>
+                    <li>Managed client relationships and project delivery</li>
+                </ul>
+            </div>
+            
+            <div class="experience-item">
+                <div class="experience-header">
+                    <h3 class="experience-company">Nisadhya Marketing Pvt. Ltd</h3>
+                    <span class="experience-duration">January 2020 - March 2020</span>
+                </div>
+                <p class="experience-role">Web Developer</p>
+                <ul class="experience-details">
+                    <li>Learned to create chatbots for production websites</li>
+                    <li>Developed skills in WordPress development</li>
+                    <li>Assisted in developing KeyStone's website</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" style="background: #0b1120;">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="card-grid">
+                <div class="card" data-project="1">
+                    <div class="card-content">
+                        <span class="date">Research Project</span>
+                        <h3>Fog Harvesting System</h3>
+                        <p>Developed sustainable water solution for rural communities in Nepal</p>
+                        <div class="tech-badges">
+                            <span class="tech-badge">Research</span>
+                            <span class="tech-badge">Data Analysis</span>
+                            <span class="tech-badge">Sustainability</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card" data-project="2">
+                    <div class="card-content">
+                        <span class="date">Industry Solution</span>
+                        <h3>POS with Inventory Management</h3>
+                        <p>Custom system for local vendors with inventory tracking</p>
+                        <div class="tech-badges">
+                            <span class="tech-badge">Web Development</span>
+                            <span class="tech-badge">Database</span>
+                            <span class="tech-badge">UI/UX</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card" data-project="3">
+                    <div class="card-content">
+                        <span class="date">Infrastructure</span>
+                        <h3>Bridge Construction Projects</h3>
+                        <p>Managed over 200 bridge projects across rural Nepal</p>
+                        <div class="tech-badges">
+                            <span class="tech-badge">Project Management</span>
+                            <span class="tech-badge">Engineering</span>
+                            <span class="tech-badge">Coordination</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Skills & Expertise</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Technical Skills</h3>
+                    <div class="skill-badges">
+                        <span class="skill-badge">Python</span>
+                        <span class="skill-badge">Data Scraping</span>
+                        <span class="skill-badge">Selenium</span>
+                        <span class="skill-badge">Back-end Development</span>
+                        <span class="skill-badge">Data Analysis</span>
+                        <span class="skill-badge">Computer Vision</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Professional Skills</h3>
+                    <div class="skill-badges">
+                        <span class="skill-badge">Research & Development</span>
+                        <span class="skill-badge">Grant Management</span>
+                        <span class="skill-badge">Project Management</span>
+                        <span class="skill-badge">Sales/Business Development</span>
+                        <span class="skill-badge">Public Relations</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Certifications</h3>
+                    <div class="skill-badges">
+                        <span class="skill-badge">Spark Fundamentals I</span>
+                        <span class="skill-badge">AI Analyst - Explorer Award 2019</span>
+                        <span class="skill-badge">Data Science Methodology</span>
+                        <span class="skill-badge">Python OOP</span>
+                        <span class="skill-badge">Python 101 for Data Science</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="experience-item">
+                <div class="experience-header">
+                    <h3 class="experience-company">London Metropolitan University</h3>
+                    <span class="experience-duration">2022 - 2024</span>
+                </div>
+                <p class="experience-role">Master's degree, MSc Information Technology and Applied Security</p>
+            </div>
+            
+            <div class="experience-item">
+                <div class="experience-header">
+                    <h3 class="experience-company">London Metropolitan University</h3>
+                    <span class="experience-duration">2017 - 2020</span>
+                </div>
+                <p class="experience-role">Bachelor's in Information and Technology (Computing), Computer Science</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="card">
+                <div class="card-content" style="text-align: center;">
+                    <p style="font-size: 1.2rem; margin-bottom: 20px;">I'm always open to discussing new projects, opportunities, or partnerships.</p>
+                    <p style="font-size: 1.3rem; margin-bottom: 30px;">
+                        <i class="fas fa-envelope"></i> neerajgyawali5508@gmail.com<br>
+                        <i class="fas fa-map-marker-alt"></i> Lalitpur District, Nepal
+                    </p>
+                    <div class="social-links">
+                        <a href="https://linkedin.com/in/neeraj-gyawali-04833a25b" target="_blank" title="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/neeraj5508" target="_blank" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="mailto:neerajgyawali5508@gmail.com" title="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p class="copyright">© 2025 Neeraj Gyawali. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Project Modals -->
+    <div class="modal" id="projectModal1">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+                <img src="hhh.jpg" alt="Fog Harvesting">
+                <div class="modal-header-content">
+                    <h2>Fog Harvesting System</h2>
+                    <p>Sustainable water solution for rural Nepal</p>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="project-details">
+                    <div class="project-info">
+                        <h3>Project Overview</h3>
+                        <p>Developed innovative fog harvesting technologies to provide sustainable water sources for rural communities in Nepal. This project involved researching atmospheric water generation techniques suitable for Nepal's climate and topography.</p>
+                        
+                        <p>We conducted field studies across multiple regions, collecting data on fog patterns, humidity levels, and water collection efficiency. The system we developed increased water collection by 40% compared to traditional methods, providing a viable solution for communities with limited access to clean water.</p>
+                        
+                        <h3>Implementation</h3>
+                        <p>The project included designing and testing various mesh materials, frame structures, and collection systems. We developed data collection protocols and created comprehensive reports with actionable insights for local governments and communities.</p>
+                        
+                        <div class="project-links">
+                            <a href="https://drive.google.com/file/d/1X05erHWNdRI7ZT6JnOcoCyBcH77sjNgy/view?usp=sharing" class="project-link">
+                                <i class="fas fa-file-pdf"></i> Research Paper
+                            </a>
+                            <a href="https://drive.google.com/drive/folders/1KYz3NHAenVgKO6h3DNUwpGLAnsNYdkIJ?usp=sharing" class="project-link">
+                                <i class="fas fa-images"></i> Field Photos
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="project-meta">
+                        <div class="meta-item">
+                            <h4>Organization</h4>
+                            <p>Nepal Academy of Science and Technology (NAST)</p>
+                        </div>
+                        <div class="meta-item">
+                            <h4>Duration</h4>
+                            <p>April 2024 - May 2025</p>
+                        </div>
+                        <div class="meta-item">
+                            <h4>Technologies</h4>
+                            <div class="tech-badges">
+                                <span class="tech-badge">Data Analysis</span>
+                                <span class="tech-badge">Field Research</span>
+                                <span class="tech-badge">Sustainability</span>
+                                <span class="tech-badge">Community Engagement</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="projectModal2">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+                <img src="pos.jpg" alt="POS System">
+                <div class="modal-header-content">
+                    <h2>POS with Inventory Management</h2>
+                    <p>Custom solution for local vendors</p>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="project-details">
+                    <div class="project-info">
+                        <h3>Project Overview</h3>
+                        <p>Developed a comprehensive Point of Sale system with integrated inventory management for local vendors in Nepal. The system simplifies sales transactions while automatically updating inventory levels, generating sales reports, and tracking customer purchases.</p>
+                        
+                        <p>The solution was designed with a user-friendly interface suitable for small business owners with limited technical experience. It includes features for barcode scanning, receipt printing, sales analytics, and low-stock alerts.</p>
+                        
+                        <h3>Technical Implementation</h3>
+                        <p>Built with Python for backend processing and SQLite for database management. The frontend was developed using PyQt for desktop compatibility. The system operates offline with local data storage, making it ideal for areas with limited internet connectivity.</p>
+                        
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i> GitHub Repository
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fas fa-desktop"></i> Live Demo
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="project-meta">
+                        <div class="meta-item">
+                            <h4>Client</h4>
+                            <p>Local Vendors (Freelance Project)</p>
+                        </div>
+                        <div class="meta-item">
+                            <h4>Duration</h4>
+                            <p>March 2021 - February 2023</p>
+                        </div>
+                        <div class="meta-item">
+                            <h4>Technologies</h4>
+                            <div class="tech-badges">
+                                <span class="tech-badge">Python</span>
+                                <span class="tech-badge">SQLite</span>
+                                <span class="tech-badge">PyQt</span>
+                                <span class="tech-badge">Inventory Management</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="projectModal3">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+                <img src="suspension-bridge.jpg">
+                <div class="modal-header-content">
+                    <h2>Bridge Construction Projects</h2>
+                    <p>Infrastructure development across rural Nepal</p>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="project-details">
+                    <div class="project-info">
+                        <h3>Project Overview</h3>
+                        <p>Managed over 200 trail, suspended and suspension bridge projects across rural Nepal, improving transportation and accessibility for remote communities. These projects connected isolated villages to essential services like healthcare, education, and markets.</p>
+                        
+                        <p>My role included coordinating with engineering teams, local communities, and government officials; managing project timelines and resources; and ensuring compliance with safety standards and environmental regulations.</p>
+                        
+                        <h3>Impact</h3>
+                        <p>The bridges have significantly reduced travel time for thousands of villagers, improved access to emergency services, and boosted local economies by facilitating trade and commerce. Some bridges reduced travel time from several hours to just minutes.</p>
+                        
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-images"></i> Project Gallery
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fas fa-map-marked-alt"></i> Project Locations
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="project-meta">
+                        <div class="meta-item">
+                            <h4>Organization</h4>
+                            <p>Junkiri Industries Pvt. Ltd.</p>
+                        </div>
+                        <div class="meta-item">
+                            <h4>Duration</h4>
+                            <p>February 2016 - Present</p>
+                        </div>
+                        <div class="meta-item">
+                            <h4>Key Areas</h4>
+                            <div class="tech-badges">
+                                <span class="tech-badge">Project Management</span>
+                                <span class="tech-badge">Community Coordination</span>
+                                <span class="tech-badge">Infrastructure</span>
+                                <span class="tech-badge">Rural Development</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const themeToggle = document.getElementById('themeToggle');
+            const body = document.body;
+            
+            // Set initial theme based on localStorage or default to dark
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'light') {
+                body.classList.add('light-mode');
+            }
+            
+            themeToggle.addEventListener('click', function() {
+                body.classList.toggle('light-mode');
+                
+                // Update localStorage
+                const currentTheme = body.classList.contains('light-mode') ? 'light' : 'dark';
+                localStorage.setItem('theme', currentTheme);
+                
+                // Update toggle icon
+                const toggleIcon = document.querySelector('.toggle-icon');
+                if (body.classList.contains('light-mode')) {
+                    toggleIcon.classList.remove('fa-moon');
+                    toggleIcon.classList.add('fa-sun');
+                } else {
+                    toggleIcon.classList.remove('fa-sun');
+                    toggleIcon.classList.add('fa-moon');
+                }
+            });
+            
+            // Initialize the icon based on current theme
+            const toggleIcon = document.querySelector('.toggle-icon');
+            if (body.classList.contains('light-mode')) {
+                toggleIcon.classList.remove('fa-moon');
+                toggleIcon.classList.add('fa-sun');
+            }
+            
+            // Project Modal Functionality
+            const projectCards = document.querySelectorAll('.card[data-project]');
+            const modals = document.querySelectorAll('.modal');
+            const closeButtons = document.querySelectorAll('.close-modal');
+            
+            // Open modal when project card is clicked
+            projectCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    const projectId = this.getAttribute('data-project');
+                    const modal = document.getElementById(`projectModal${projectId}`);
+                    modal.style.display = 'block';
+                    document.body.style.overflow = 'hidden'; // Prevent scrolling
+                });
+            });
+            
+            // Close modal when close button is clicked
+            closeButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const modal = this.closest('.modal');
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto'; // Enable scrolling
+                });
+            });
+            
+            // Close modal when clicking outside the modal content
+            window.addEventListener('click', function(event) {
+                modals.forEach(modal => {
+                    if (event.target === modal) {
+                        modal.style.display = 'none';
+                        document.body.style.overflow = 'auto'; // Enable scrolling
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
